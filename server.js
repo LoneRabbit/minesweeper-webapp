@@ -3,23 +3,22 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files from the public directory
+// Serve static files from public/
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Fallback to index.html for SPA (only for non-file requests)
-app.use((req, res, next) => {
-  if (req.method === 'GET' && !req.path.includes('.')) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  } else {
-    next();
-  }
+// Serve JS from web-app/ under /js/*
+app.use('/js', express.static(path.join(__dirname, 'web-app')));
+
+// Route for root HTML
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Minesweeper webapp running at http://localhost:${PORT}`);
-}); 
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});

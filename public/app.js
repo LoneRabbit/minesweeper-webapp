@@ -384,7 +384,6 @@ function revealMazeCell(state, row, col, useDefuser = false) {
   const cellState = state.cellState.map(rowArr => rowArr.map(cell => ({ ...cell })));
   let inventory = { ...state.inventory };
   let feedbacks = [];
-  // Helper to open a chest at (r, c)
   function openChest(r, c) {
     const content = state.chestContents[[r, c].join(",")];
     if (content === 'key') {
@@ -399,11 +398,9 @@ function revealMazeCell(state, row, col, useDefuser = false) {
     }
     cellState[r][c].chest = false;
   }
-  // Chest logic for clicked cell
   if (cellState[row][col].chest) {
     openChest(row, col);
   }
-  // Door logic
   if (cellState[row][col].door) {
     if (inventory.keys > 0) {
       inventory.keys--;
@@ -423,6 +420,12 @@ function revealMazeCell(state, row, col, useDefuser = false) {
       cellState[row][col].mine = false;
       // Continue as if blank
     } else {
+      // Reveal all bombs
+      for (let r = 0; r < state.rows; r++) {
+        for (let c = 0; c < state.cols; c++) {
+          if (cellState[r][c].mine) cellState[r][c].revealed = true;
+        }
+      }
       return { ...state, cellState, inventory, gameOver: true, won: false };
     }
   }

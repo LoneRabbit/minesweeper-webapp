@@ -1,4 +1,12 @@
 /**
+ * Minesweeper game logic module.
+ * Provides pure functions to create and manipulate Minesweeper game state, supporting custom board sizes, difficulty levels, and themes.
+ * All functions are pure and do not mutate their arguments.
+ *
+ * @module game
+ */
+
+/**
  * @typedef {Object} GameConfig
  * @property {number} rows - Number of rows on the board.
  * @property {number} cols - Number of columns on the board.
