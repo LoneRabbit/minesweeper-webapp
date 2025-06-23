@@ -1,0 +1,128 @@
+/* Base styles and CSS variables for themes */
+:root {
+  --bg: #f9f9f9;
+  --fg: #222;
+  --accent: #007bff;
+  --cell-bg: #fff;
+  --cell-border: #ccc;
+  --cell-revealed: #e9ecef;
+  --cell-flag: #ff5252;
+  --cell-mine: #222;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+header {
+  text-align: center;
+  padding: 1rem 0;
+}
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+#status {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+#board {
+  display: grid;
+  justify-content: center;
+  gap: 2px;
+  margin: 0 auto;
+  background: var(--cell-border);
+  border-radius: 8px;
+  padding: 4px;
+  max-width: 90vw;
+}
+.cell {
+  width: 32px;
+  height: 32px;
+  background: var(--cell-bg);
+  border: 1px solid var(--cell-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.cell.revealed {
+  background: var(--cell-revealed);
+  cursor: default;
+}
+.cell.flagged {
+  color: var(--cell-flag);
+}
+.cell.mine {
+  color: var(--cell-mine);
+}
+
+/* Modern Minimal Theme (default) */
+.theme-modern {
+  --bg: #f9f9f9;
+  --fg: #222;
+  --accent: #007bff;
+  --cell-bg: #fff;
+  --cell-border: #ccc;
+  --cell-revealed: #e9ecef;
+  --cell-flag: #ff5252;
+  --cell-mine: #222;
+}
+
+/* 90s Internet Theme */
+.theme-90s {
+  --bg: #e0e0ff;
+  --fg: #000080;
+  --accent: #ff00ff;
+  --cell-bg: #c0c0c0;
+  --cell-border: #000;
+  --cell-revealed: #fff;
+  --cell-flag: #ff0;
+  --cell-mine: #f00;
+  font-family: 'Comic Sans MS', 'Courier New', cursive, sans-serif;
+}
+
+/* High Contrast Theme */
+.theme-contrast {
+  --bg: #000;
+  --fg: #fff;
+  --accent: #ff0;
+  --cell-bg: #000;
+  --cell-border: #fff;
+  --cell-revealed: #222;
+  --cell-flag: #ff0;
+  --cell-mine: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #board {
+    max-width: 100vw;
+  }
+  .cell {
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+  }
+}
+
+#timer {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+#leaderboard {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#leaderboard table {
+  margin: 0 auto;
+} 

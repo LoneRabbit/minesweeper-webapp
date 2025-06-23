@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper Web App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Minesweeper</h1>
+  </header>
+  <section id="controls">
+    <label for="mode">Mode:</label>
+    <select id="mode">
+      <option value="classic">Classic</option>
+      <option value="maze">Maze</option>
+    </select>
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <label for="theme">Theme:</label>
+    <select id="theme">
+      <option value="modern">Modern Minimal</option>
+      <option value="90s">90s Internet</option>
+      <option value="contrast">High Contrast</option>
+    </select>
+    <button id="reset">Reset</button>
+  </section>
+  <section id="status"></section>
+  <div id="timer"></div>
+  <div id="leaderboard"></div>
+  <main>
+    <div id="board"></div>
+  </main>
+  <script src="app.js" type="module"></script>
+</body>
+</html> 
