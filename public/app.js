@@ -47,6 +47,7 @@ let timerStarted = false;
 // Maze mode state
 let mazeState = null;
 let mazeStatusTimeout = null;
+let firstMazeClick = true;
 
 function getConfigFromDifficulty() {
   const val = difficultyEl.value;
@@ -546,8 +547,16 @@ function renderMazeMinesweeper(state) {
       cellEl.addEventListener('click', e => {
         if (gameOver || won) return;
         if (player.row === r && player.col === c) return; // can't reveal self
+        if (firstMazeClick) {
+          firstMazeClick = false;
+          resetTimer();
+          startTimer();
+        }
         mazeState = revealMazeCell(mazeState, r, c);
-        if (mazeState.gameOver) updateMazeStatus();
+        if (mazeState.gameOver) {
+          stopTimer();
+          updateMazeStatus();
+        }
         renderMazeMinesweeper(mazeState);
       });
       cellEl.addEventListener('contextmenu', e => {
@@ -577,6 +586,9 @@ function moveMazePlayer(newRow, newCol) {
   if (exit.row === newRow && exit.col === newCol) {
     mazeState.gameOver = true;
     mazeState.won = true;
+    stopTimer();
+    maybeAddToLeaderboard(timer);
+    renderLeaderboard();
     updateMazeStatus();
     renderMazeMinesweeper(mazeState);
     return;
@@ -624,7 +636,8 @@ function resetMaze() {
   mazeState = generateMazeMinesweeper(config.rows, config.cols, config.mines);
   renderMazeMinesweeper(mazeState);
   updateMazeStatus();
-  timerEl.textContent = '';
+  resetTimer();
+  firstMazeClick = true;
   leaderboardEl.textContent = '';
 }
 

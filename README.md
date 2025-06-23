@@ -118,6 +118,9 @@ npx jsdoc web-app/game.js web-app/mazeGame.js
 ### Classic Minesweeper (90s Theme)
 ![Classic Minesweeper - Modern Minimal](docs/screenshots/minesweeper-90s.png)
 
+### Maze/Adventure Mode (Modern Minimal Theme)
+![Classic Minesweeper - Modern Minimal](docs/screenshots/maze-modern.png)
+
 ### Maze/Adventure Mode (90s Internet Theme)
 ![Maze Mode - 90s Internet](docs/screenshots/maze-90s.png)
 
