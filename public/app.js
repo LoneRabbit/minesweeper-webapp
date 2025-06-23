@@ -84,7 +84,7 @@ function renderBoard(state) {
       cellEl.tabIndex = 0;
       if (cell.revealed) cellEl.classList.add('revealed');
       if (cell.flagged) cellEl.classList.add('flagged');
-      if (cell.revealed && cell.mine) cellEl.classList.add('mine');
+      if ((cell.revealed && cell.mine) || (state.gameOver && cell.mine)) cellEl.classList.add('mine');
       cellEl.dataset.row = r;
       cellEl.dataset.col = c;
       // Cell content
@@ -96,6 +96,9 @@ function renderBoard(state) {
         }
       } else if (cell.flagged) {
         cellEl.textContent = '🚩';
+      } else if (state.gameOver && cell.mine) {
+        // Show all mines when game is over
+        cellEl.textContent = '💣';
       } else {
         cellEl.textContent = '';
       }
@@ -532,6 +535,10 @@ function renderMazeMinesweeper(state) {
       } else if (cell.flagged) {
         cellEl.textContent = '🚩';
         cellEl.classList.add('flagged');
+      } else if (gameOver && cell.mine) {
+        // Show all mines when game is over
+        cellEl.textContent = '💣';
+        cellEl.style.background = '#f44336';
       } else {
         cellEl.textContent = '';
       }

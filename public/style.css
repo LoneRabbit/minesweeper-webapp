@@ -95,9 +95,9 @@ header {
   --bg: #000;
   --fg: #fff;
   --accent: #ff0;
-  --cell-bg: #000;
+  --cell-bg: #333;
   --cell-border: #fff;
-  --cell-revealed: #222;
+  --cell-revealed: #666;
   --cell-flag: #ff0;
   --cell-mine: #fff;
 }
