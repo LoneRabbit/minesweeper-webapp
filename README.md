@@ -83,6 +83,92 @@ minesweeper-webapp/
 - Reach the exit to win; hitting a mine ends the game.
 - All mines are revealed on loss.
 
+---
+
+## How to Play
+
+### Classic Minesweeper
+
+**Objective**: Clear all non-mine cells without detonating any mines.
+
+**Gameplay**:
+1. **Left-click** or **Enter/Space** to reveal a cell
+2. **Right-click** or **F key** to flag/unflag a suspected mine
+3. Numbers show how many mines are adjacent to that cell
+4. Empty cells automatically reveal adjacent cells
+5. Flag all mines and reveal all safe cells to win
+
+**Difficulty Levels**:
+- **Easy**: 9×9 grid with 10 mines
+- **Medium**: 16×16 grid with 40 mines  
+- **Hard**: 16×30 grid with 99 mines
+
+### Maze/Adventure Mode
+
+**Objective**: Navigate from your starting position to the exit while avoiding mines.
+
+**Gameplay**:
+1. **Left-click** to reveal cells (you can only move to revealed, non-mine cells)
+2. **Double-click** on adjacent revealed cells to move there
+3. **Arrow keys** to move in four directions
+4. **D key** to use a bomb defuser on adjacent mines
+5. Collect keys from chests to unlock doors
+6. Use defusers to safely clear mines
+7. Reach the exit to win
+
+**Special Elements**:
+- 🧑 **Player**: Your starting position
+- 🚪 **Exit**: Your goal (golden door)
+- 🎁 **Chests**: Contain keys or bomb defusers
+- 🔒 **Locked Doors**: Require keys to unlock
+- 💣 **Mines**: End the game if hit
+- 🧯 **Defusers**: Can safely clear mines
+
+### Keyboard Accessibility
+
+**Classic Mode**:
+- **Tab**: Navigate between cells
+- **Enter** or **Space**: Reveal selected cell
+- **F**: Flag/unflag selected cell
+- **Arrow keys**: Move between cells
+
+**Maze Mode**:
+- **Arrow keys**: Move player in four directions
+- **D**: Use bomb defuser on adjacent mine
+- **Tab**: Navigate between cells (for revealing)
+- **Enter** or **Space**: Reveal selected cell
+- **F**: Flag selected cell
+
+**General Controls**:
+- **R** or **Reset button**: Start new game
+- **Theme dropdown**: Switch between visual themes
+- **Difficulty dropdown**: Change game difficulty
+- **Mode dropdown**: Switch between Classic and Maze modes
+
+### Accessibility Features
+
+- **High Contrast Theme**: Designed for visually impaired users
+- **Keyboard Navigation**: Full game control without mouse
+- **Screen Reader Support**: Semantic HTML and ARIA labels
+- **Color Blind Friendly**: Multiple themes with distinct visual patterns
+- **Responsive Design**: Works on mobile and desktop devices
+
+### Tips & Strategies
+
+**Classic Mode**:
+- Start with corners and edges (fewer adjacent cells)
+- Use flags to mark suspected mines
+- Look for patterns in revealed numbers
+- The first click is always safe
+
+**Maze Mode**:
+- Reveal cells systematically around your position
+- Save defusers for critical path mines
+- Collect keys before encountering doors
+- Plan your route to the exit
+
+---
+
 ## Theming & Accessibility
 
 - **Modern Minimal**: Clean, neutral colors.
