@@ -25,7 +25,7 @@ A modern, accessible, and fully-featured Minesweeper game with advanced gameplay
 
 1. Clone the repository:
    ```sh
-   git clone <your-repo-url>
+   git clone https://github.com/Computing-2-Submissions-2024-25/c2-LoneRabbit
    cd minesweeper-webapp
    ```
 2. Install dependencies:
@@ -185,15 +185,6 @@ To generate HTML documentation (requires [JSDoc](https://jsdoc.app/)):
 ```sh
 npx jsdoc web-app/game.js web-app/mazeGame.js
 ```
-
-## Assignment Criteria
-
-- Pure functional implementation of all game logic.
-- Well-documented API with JSDoc.
-- Comprehensive, behavior-driven unit tests.
-- Clean, accessible, and responsive web UI.
-- Custom board sizes, difficulty levels, and themes.
-- Advanced Maze/Adventure mode with inventory and pathfinding.
 
 ## Screenshots
 
