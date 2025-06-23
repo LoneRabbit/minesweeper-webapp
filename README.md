@@ -115,15 +115,14 @@ npx jsdoc web-app/game.js web-app/mazeGame.js
 ### Classic Minesweeper (Modern Minimal Theme)
 ![Classic Minesweeper - Modern Minimal](docs/screenshots/classic-modern.png)
 
+### Classic Minesweeper (90s Theme)
+![Classic Minesweeper - Modern Minimal](docs/screenshots/minesweeper-90s.png)
+
 ### Maze/Adventure Mode (90s Internet Theme)
 ![Maze Mode - 90s Internet](docs/screenshots/maze-90s.png)
 
 ### High Contrast Theme
 ![High Contrast Theme](docs/screenshots/high-contrast.png)
 
-To add your own screenshots:
-1. Take screenshots of your app in different modes/themes.
-2. Save them as PNG or JPG files in a new folder: `docs/screenshots/`.
-3. Update the image paths above if needed.
 
 ---
